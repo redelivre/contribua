@@ -1,6 +1,6 @@
 <?php
 	/*
-    	Plugin Name: Mobilize Contribua
+    	Plugin Name: Contribua
 	    Plugin URI: http://www.ethymos.com.br
 	    Description: 
 	    Author: Ethymos
@@ -10,9 +10,10 @@
 	    Domain Path:
 	 */
 
-	define('MOIP_PATH', dirname(__FILE__));
+	define('CONTRIBUA_PATH', dirname(__FILE__));
 
-	require MOIP_PATH.'/vendor.php';
+	require CONTRIBUA_PATH.'/vendor.php';
+	require CONTRIBUA_PATH.'/includes/functions.php';
 	
 	$m_options = get_option('mobilize_options');
 	add_action('mobilize-admin-page', array('Contribua', 'init'));
