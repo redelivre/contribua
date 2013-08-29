@@ -9,7 +9,8 @@ class Contribua
 	 * @param  [type] $index [description]
 	 * @return [type]        [description]
 	 */
-	public function getOption($index) {
+	public function getOption($index) 
+	{
 		$options = get_option('mobilize_options');
 		return isset($options[$index]) ? $options[$index] : NULL;
 	}
@@ -18,7 +19,8 @@ class Contribua
 	 * [init description]
 	 * @return [type] [description]
 	 */
-	public function init(){
+	public function init()
+	{
 		require_once dirname(MOIP_PATH_FILE).'/template/index.php';
 	}
 
@@ -26,7 +28,7 @@ class Contribua
 	 * [save_mobilize_moip_settings description]
 	 * @return [type] [description]
 	 */
-	public function save_mobilize_moip_settings() {
+	public function saveMobilizeMoipSettings() {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$mm_checkbox_status = trim(mysql_real_escape_string($_POST['mm_checkbox_status']));
 

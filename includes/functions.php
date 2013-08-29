@@ -7,8 +7,8 @@
 function contribua_add_stylesheets()
 {
 	wp_enqueue_style('style-jqueryui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
-	wp_enqueue_style('style-color-picker', get_bloginfo('url').'/wp-content/plugins/Mobilize_moip/template/js/vendor/colorpicker/css/colorpicker.css');
-	wp_enqueue_style('style-app', get_bloginfo('url').'/wp-content/plugins/Mobilize_moip/template/css/app.css');
+	wp_enqueue_style('style-color-picker', plugins_url('/Mobilize_moip/assets/js/vendor/colorpicker/css/colorpicker.css', CONTRIBUA_PATH));
+	wp_enqueue_style('style-app', plugins_url('/Mobilize_moip/assets/css/app.css', CONTRIBUA_PATH));
 }
 
 add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
@@ -20,9 +20,9 @@ add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
 function contribua_add_javascripts()
 {
 	wp_enqueue_script('script-jquery', 'http://code.jquery.com/jquery-1.9.1.js');
-	wp_enqueue_script('script-color-picker', get_bloginfo('url').'/wp-content/plugins/Mobilize_moip/template/js/vendor/colorpicker/js/colorpicker.js');
-	wp_enqueue_script('script-price', get_bloginfo('url').'/wp-content/plugins/Mobilize_moip/template/js/vendor/price.js');
-	wp_enqueue_script('script-app', get_bloginfo('url').'/wp-content/plugins/Mobilize_moip/template/js/app.js');
+	wp_enqueue_script('script-color-picker', plugins_url('/Mobilize_moip/assets/js/vendor/colorpicker/js/colorpicker.js', CONTRIBUA_PATH));
+	wp_enqueue_script('script-price', plugins_url('/Mobilize_moip/assets/js/vendor/price.js', CONTRIBUA_PATH));
+	wp_enqueue_script('script-app', plugins_url('/wp-content/plugins/Mobilize_moip/assets/js/app.js', CONTRIBUA_PATH));
 }
 
 add_action('wp_enqueue_scripts', 'contribua_add_javascripts');

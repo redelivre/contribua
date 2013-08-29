@@ -13,6 +13,7 @@
 	define('CONTRIBUA_PATH', dirname(__FILE__));
 
 	require CONTRIBUA_PATH.'/vendor.php';
+	require CONTRIBUA_PATH.'/widget.php';
 	require CONTRIBUA_PATH.'/includes/functions.php';
 	
 	$m_options = get_option('mobilize_options');
