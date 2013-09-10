@@ -95,6 +95,6 @@ class Contribua
 	 */
 	public function template($url)
 	{
-		return dirname(MOIP_PATH_FILE).'/tpl_mobilize_moip.php';
+		return CONTRIBUA_PATH.'/tpl_mobilize_moip.php';
 	}
 }

@@ -9,6 +9,7 @@ function contribua_add_stylesheets()
 	wp_enqueue_style('style-jqueryui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
 	wp_enqueue_style('style-color-picker', plugins_url('/Mobilize_moip/assets/js/vendor/colorpicker/css/colorpicker.css', CONTRIBUA_PATH));
 	wp_enqueue_style('style-app', plugins_url('/Mobilize_moip/assets/css/app.css', CONTRIBUA_PATH));
+	wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
 }
 
 add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
@@ -39,3 +40,15 @@ function contribua_admin_page()
 }
 
 add_action('admin_menu', 'contribua_admin_page');
+
+/**
+ * [create_excerpt description]
+ * @param  [type]  $string   [description]
+ * @param  integer $length   [description]
+ * @param  string  $encoding [description]
+ * @return [type]            [description]
+ */
+function create_excerpt($string, $length = 80, $encoding = 'UTF-8')
+{
+	return mb_strlen($string, $encoding) > $length ? mb_substr($string, 0, $length, $encoding).'...' : $string;
+}

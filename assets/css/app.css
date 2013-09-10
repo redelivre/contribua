@@ -35,3 +35,7 @@
 	display: block;
 	margin-bottom: 2px;
 }
+
+body {
+	background: #000 !important;
+}

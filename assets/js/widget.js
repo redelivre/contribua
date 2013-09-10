@@ -1,5 +1,5 @@
 jQuery(function($){
-	$('input[name=valor]').priceFormat({
+	$('input[rel=price-format]').priceFormat({
 	    prefix: 'R$ ',
 	    centsSeparator: ',',
 	    thousandsSeparator: '.'

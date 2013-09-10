@@ -19,13 +19,19 @@ class ContribuaWidget extends WP_Widget
 
 	public function form($instance) 
 	{
+		$id_carteira    = isset($instance['id_carteira']) ? $instance['id_carteira'] : '';
+		$pagina_retorno = isset($instance['pagina_retorno']) ? $instance['pagina_retorno'] : '';
+		$tipo_projeto   = isset($instance['tipo_projeto']) ? $instance['tipo_projeto'] : '';
+		$descricao      = isset($instance['descricao']) ? $instance['descricao'] : '';
+		$valor          = isset($instance['valor']) ? $instance['valor'] : '';
+
 		require CONTRIBUA_PATH.'/views/template-admin-widget.php';
 	}
 
 	public function update($new_instance, $old_instance)
 	{
 		$instance = array();
-		$instance['id_carteira']    = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+		$instance['id_carteira']    = (!empty($new_instance['id_carteira'])) ? strip_tags($new_instance['id_carteira']) : '';
 		$instance['pagina_retorno'] = (!empty($new_instance['pagina_retorno'])) ? strip_tags($new_instance['pagina_retorno']) : '';
 		$instance['tipo_projeto']   = (!empty($new_instance['tipo_projeto'])) ? strip_tags($new_instance['tipo_projeto']) : '';
 		$instance['descricao']      = (!empty($new_instance['descricao'])) ? strip_tags($new_instance['descricao']) : '';
