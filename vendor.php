@@ -3,87 +3,75 @@
 class Contribua
 {	
 	const TEXTO_DESCRITIVO_PADRAO = 'Selecine ou insira um valor para sua contribuição. Ao clicar no botão, você será direcionado à área de pagamento.';
-	
+
 	/**
 	 * [getOption description]
 	 * @param  [type] $index [description]
 	 * @return [type]        [description]
 	 */
-	public function getOption($index) 
+	public static function getOption($index) 
 	{
-		$options = get_option('mobilize_options');
+		$options = get_option('contribua_options');
 		return isset($options[$index]) ? $options[$index] : NULL;
-	}
-
-	/**
-	 * [init description]
-	 * @return [type] [description]
-	 */
-	public function init()
-	{
-		require_once dirname(MOIP_PATH_FILE).'/template/index.php';
 	}
 
 	/**
 	 * [save_mobilize_moip_settings description]
 	 * @return [type] [description]
 	 */
-	public function saveMobilizeMoipSettings() {
+	public static function saveSettings() {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$mm_checkbox_status = trim(mysql_real_escape_string($_POST['mm_checkbox_status']));
+			$_POST['contribuicaofixa1'] = isset($_POST['contribuicaofixa1']) ? $_POST['contribuicaofixa1'] : '';
+			$_POST['contribuicaofixa2'] = isset($_POST['contribuicaofixa2']) ? $_POST['contribuicaofixa2'] : '';
+			$_POST['contribuicaofixa3'] = isset($_POST['contribuicaofixa3']) ? $_POST['contribuicaofixa3'] : '';
+			$_POST['contribuicaolivre'] = isset($_POST['contribuicaolivre']) ? $_POST['contribuicaolivre'] : '';
 
-			$_POST['mm_checkbox_contribuicaofixa1'] = isset($_POST['mm_checkbox_contribuicaofixa1']) ? $_POST['mm_checkbox_contribuicaofixa1'] : '';
-			$_POST['mm_checkbox_contribuicaofixa2'] = isset($_POST['mm_checkbox_contribuicaofixa2']) ? $_POST['mm_checkbox_contribuicaofixa2'] : '';
-			$_POST['mm_checkbox_contribuicaofixa3'] = isset($_POST['mm_checkbox_contribuicaofixa3']) ? $_POST['mm_checkbox_contribuicaofixa3'] : '';
-			$_POST['mm_checkbox_contribuicaolivre'] = isset($_POST['mm_checkbox_contribuicaolivre']) ? $_POST['mm_checkbox_contribuicaolivre'] : '';
+			$_POST['tipo_contribuicaofixa1'] = isset($_POST['tipo_contribuicaofixa1']) ? $_POST['tipo_contribuicaofixa1'] : '';
+			$_POST['tipo_contribuicaofixa2'] = isset($_POST['tipo_contribuicaofixa2']) ? $_POST['tipo_contribuicaofixa2'] : '';
+			$_POST['tipo_contribuicaofixa3'] = isset($_POST['tipo_contribuicaofixa3']) ? $_POST['tipo_contribuicaofixa3'] : '';
 
-			$_POST['mm_tipo_contribuicaofixa1'] = isset($_POST['mm_tipo_contribuicaofixa1']) ? $_POST['mm_tipo_contribuicaofixa1'] : '';
-			$_POST['mm_tipo_contribuicaofixa2'] = isset($_POST['mm_tipo_contribuicaofixa2']) ? $_POST['mm_tipo_contribuicaofixa2'] : '';
-			$_POST['mm_tipo_contribuicaofixa3'] = isset($_POST['mm_tipo_contribuicaofixa3']) ? $_POST['mm_tipo_contribuicaofixa3'] : '';
+			$descricao                   = strip_tags(trim($_POST['descricao']));
+			$carteira                    = strip_tags(trim($_POST['carteira']));
+			$url_retorno                 = strip_tags(trim($_POST['url_retorno']));
+			$color_institucional         = strip_tags(trim($_POST['color_institucional']));
+			$color_projeto               = strip_tags(trim($_POST['color_projeto']));
+			$color_outros                = strip_tags(trim($_POST['color_outros']));
+			$contribuicaofixa1           = strip_tags(trim($_POST['contribuicaofixa1']));
+			$tipo_contribuicaofixa1      = strip_tags(trim($_POST['tipo_contribuicaofixa1']));
+			$descricao_contribuicaofixa1 = strip_tags(trim($_POST['descricao_contribuicaofixa1']));
+			$valor_contribuicaofixa1     = strip_tags(trim($_POST['valor_contribuicaofixa1']));
+			$contribuicaofixa2           = strip_tags(trim($_POST['contribuicaofixa2']));
+			$tipo_contribuicaofixa2      = strip_tags(trim($_POST['tipo_contribuicaofixa2']));
+			$descricao_contribuicaofixa2 = strip_tags(trim($_POST['descricao_contribuicaofixa2']));
+			$valor_contribuicaofixa2     = strip_tags(trim($_POST['valor_contribuicaofixa2']));
+			$contribuicaofixa3           = strip_tags(trim($_POST['contribuicaofixa3']));
+			$tipo_contribuicaofixa3      = strip_tags(trim($_POST['tipo_contribuicaofixa3']));
+			$descricao_contribuicaofixa3 = strip_tags(trim($_POST['descricao_contribuicaofixa3']));
+			$valor_contribuicaofixa3     = strip_tags(trim($_POST['valor_contribuicaofixa3']));
+			$contribuicaolivre           = strip_tags(trim($_POST['contribuicaolivre']));
+			$descricao_contribuicaolivre = strip_tags(trim($_POST['descricao_contribuicaolivre']));
 
-			$mm_descricao                   = strip_tags(trim($_POST['mm_descricao']));
-			$mm_carteira                    = strip_tags(trim($_POST['mm_carteira']));
-			$mm_url_retorno                 = strip_tags(trim($_POST['mm_url_retorno']));
-			$mm_color_institucional         = strip_tags(trim($_POST['mm_color_institucional']));
-			$mm_color_projeto               = strip_tags(trim($_POST['mm_color_projeto']));
-			$mm_color_outros                = strip_tags(trim($_POST['mm_color_outros']));
-			$mm_checkbox_contribuicaofixa1  = strip_tags(trim($_POST['mm_checkbox_contribuicaofixa1']));
-			$mm_tipo_contribuicaofixa1      = strip_tags(trim($_POST['mm_tipo_contribuicaofixa1']));
-			$mm_descricao_contribuicaofixa1 = strip_tags(trim($_POST['mm_descricao_contribuicaofixa1']));
-			$mm_valor_contribuicaofixa1     = strip_tags(trim($_POST['mm_valor_contribuicaofixa1']));
-			$mm_checkbox_contribuicaofixa2  = strip_tags(trim($_POST['mm_checkbox_contribuicaofixa2']));
-			$mm_tipo_contribuicaofixa2      = strip_tags(trim($_POST['mm_tipo_contribuicaofixa2']));
-			$mm_descricao_contribuicaofixa2 = strip_tags(trim($_POST['mm_descricao_contribuicaofixa2']));
-			$mm_valor_contribuicaofixa2     = strip_tags(trim($_POST['mm_valor_contribuicaofixa2']));
-			$mm_checkbox_contribuicaofixa3  = strip_tags(trim($_POST['mm_checkbox_contribuicaofixa3']));
-			$mm_tipo_contribuicaofixa3      = strip_tags(trim($_POST['mm_tipo_contribuicaofixa3']));
-			$mm_descricao_contribuicaofixa3 = strip_tags(trim($_POST['mm_descricao_contribuicaofixa3']));
-			$mm_valor_contribuicaofixa3     = strip_tags(trim($_POST['mm_valor_contribuicaofixa3']));
-			$mm_checkbox_contribuicaolivre  = strip_tags(trim($_POST['mm_checkbox_contribuicaolivre']));
-			$mm_descricao_contribuicaolivre = strip_tags(trim($_POST['mm_descricao_contribuicaolivre']));
-
-			update_option('mobilize_options', array(
-				'mm_checkbox_status'             => $mm_checkbox_status,
-				'mm_descricao'                   => $mm_descricao,
-				'mm_carteira'                    => $mm_carteira,
-				'mm_url_retorno'                 => $mm_url_retorno,
-				'mm_color_institucional'         => $mm_color_institucional,
-				'mm_color_projeto'               => $mm_color_projeto,
-				'mm_color_outros'                => $mm_color_outros,
-				'mm_checkbox_contribuicaofixa1'  => $mm_checkbox_contribuicaofixa1,
-				'mm_tipo_contribuicaofixa1'      => $mm_tipo_contribuicaofixa1,
-				'mm_descricao_contribuicaofixa1' => $mm_descricao_contribuicaofixa1,
-				'mm_valor_contribuicaofixa1'     => $mm_valor_contribuicaofixa1,
-				'mm_checkbox_contribuicaofixa2'  => $mm_checkbox_contribuicaofixa2,
-				'mm_tipo_contribuicaofixa2'      => $mm_tipo_contribuicaofixa2,
-				'mm_descricao_contribuicaofixa2' => $mm_descricao_contribuicaofixa2,
-				'mm_valor_contribuicaofixa2'     => $mm_valor_contribuicaofixa2,
-				'mm_checkbox_contribuicaofixa3'  => $mm_checkbox_contribuicaofixa3,
-				'mm_tipo_contribuicaofixa3'      => $mm_tipo_contribuicaofixa3,
-				'mm_descricao_contribuicaofixa3' => $mm_descricao_contribuicaofixa3,
-				'mm_valor_contribuicaofixa3'     => $mm_valor_contribuicaofixa3,
-				'mm_checkbox_contribuicaolivre'  => $mm_checkbox_contribuicaolivre,
-				'mm_descricao_contribuicaolivre' => $mm_descricao_contribuicaolivre
+			update_option('contribua_options', array(
+				'descricao'                   => $descricao,
+				'carteira'                    => $carteira,
+				'url_retorno'                 => $url_retorno,
+				'color_institucional'         => $color_institucional,
+				'color_projeto'               => $color_projeto,
+				'color_outros'                => $color_outros,
+				'contribuicaofixa1'           => $contribuicaofixa1,
+				'tipo_contribuicaofixa1'      => $tipo_contribuicaofixa1,
+				'descricao_contribuicaofixa1' => $descricao_contribuicaofixa1,
+				'valor_contribuicaofixa1'     => $valor_contribuicaofixa1,
+				'contribuicaofixa2'           => $contribuicaofixa2,
+				'tipo_contribuicaofixa2'      => $tipo_contribuicaofixa2,
+				'descricao_contribuicaofixa2' => $descricao_contribuicaofixa2,
+				'valor_contribuicaofixa2'     => $valor_contribuicaofixa2,
+				'contribuicaofixa3'           => $contribuicaofixa3,
+				'tipo_contribuicaofixa3'      => $tipo_contribuicaofixa3,
+				'descricao_contribuicaofixa3' => $descricao_contribuicaofixa3,
+				'valor_contribuicaofixa3'     => $valor_contribuicaofixa3,
+				'contribuicaolivre'           => $contribuicaolivre,
+				'descricao_contribuicaolivre' => $descricao_contribuicaolivre
 			));
 		}
 	}

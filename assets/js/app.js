@@ -1,21 +1,12 @@
-$(function(){
-	$('.moip-check').on('click', function(){
-		var el = $('.content-moip');
+jQuery(function($){
+	$('input:checkbox[name^=contribuicao]').on('click', function(){
+		var contentElement = $(this).parent().next('div');
 
-		if($('.moip-check input[type=checkbox]').is(':checked')){
-			$('.content-moip').fadeIn('fast');
+		if (!contentElement.is(':visible')) {
+			contentElement.fadeIn('fast');
 		}
-		else{
-			$('.content-moip').fadeOut('fast');
-		}
-	});
-
-	$('.contribuicao').on('click', function(){
-		if($(this).children('input[type=checkbox]').is(':checked')){
-			$(this).next().fadeIn('fast');
-		}
-		else{
-			$(this).next().fadeOut('fast');
+		else {
+			contentElement.fadeOut('fast');
 		}
 	});
 
@@ -27,16 +18,16 @@ $(function(){
 
 	$('.colorSelector1').ColorPicker({
 		color: $('.colorSelector1 input').val(),
-		onShow: function (colpkr) {
-			if(!$(colpkr).is(':visible')){
-				$(colpkr).fadeIn(500);
+		onShow: function (picker) {
+			if(!$(picker).is(':visible')){
+				$(picker).fadeIn(500);
 			}
 
 			return false;
 		},
-		onHide: function (colpkr) {
-			if($(colpkr).is(':visible')){
-				$(colpkr).fadeOut(500);
+		onHide: function (picker) {
+			if($(picker).is(':visible')){
+				$(picker).fadeOut(500);
 			}
 
 			return false;

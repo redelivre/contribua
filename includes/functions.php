@@ -7,8 +7,6 @@
 function contribua_add_stylesheets()
 {
 	wp_enqueue_style('style-jqueryui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
-	wp_enqueue_style('style-color-picker', plugins_url('/Mobilize_moip/assets/js/vendor/colorpicker/css/colorpicker.css', CONTRIBUA_PATH));
-	wp_enqueue_style('style-app', plugins_url('/Mobilize_moip/assets/css/app.css', CONTRIBUA_PATH));
 	wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
 }
 
@@ -21,12 +19,35 @@ add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
 function contribua_add_javascripts()
 {
 	wp_enqueue_script('script-jquery', 'http://code.jquery.com/jquery-1.9.1.js');
-	wp_enqueue_script('script-color-picker', plugins_url('/Mobilize_moip/assets/js/vendor/colorpicker/js/colorpicker.js', CONTRIBUA_PATH));
-	wp_enqueue_script('script-price', plugins_url('/Mobilize_moip/assets/js/vendor/price.js', CONTRIBUA_PATH));
-	wp_enqueue_script('script-app', plugins_url('/wp-content/plugins/Mobilize_moip/assets/js/app.js', CONTRIBUA_PATH));
+	wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 }
 
 add_action('wp_enqueue_scripts', 'contribua_add_javascripts');
+
+/**
+ * [contribua_admin_styles description]
+ * @return [type] [description]
+ */
+function contribua_admin_styles()
+{
+	wp_enqueue_style('style-app',  plugins_url('/contribua/assets/css/app.css', CONTRIBUA_PATH));
+	wp_enqueue_style('style-color-picker', plugins_url('/contribua/assets/js/vendor/colorpicker/css/colorpicker.css', CONTRIBUA_PATH));
+}
+
+add_action('admin_enqueue_scripts', 'contribua_admin_styles');
+
+/**
+ * [contribua_admin_scripts description]
+ * @return [type] [description]
+ */
+function contribua_admin_scripts()
+{
+	wp_enqueue_script('script-jquery', 'http://code.jquery.com/jquery-1.8.3.min.js');
+	wp_enqueue_script('script-color-picker', plugins_url('/contribua/assets/js/vendor/colorpicker/js/colorpicker.js', CONTRIBUA_PATH));
+	wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
+}
+
+add_action('admin_enqueue_scripts', 'contribua_admin_scripts');
 
 /**
  * [contribua_admin_page description]
