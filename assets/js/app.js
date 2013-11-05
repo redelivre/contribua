@@ -1,6 +1,6 @@
-jQuery(function($){
-	$('input:checkbox[name^=contribuicao]').on('click', function(){
-		var contentElement = $(this).parent().next('div');
+jQuery( document ).ready(function(){
+	jQuery('input:checkbox[name^=contribuicao]').on('click', function(){
+		var contentElement = jQuery(this).parent().next('div');
 
 		if (!contentElement.is(':visible')) {
 			contentElement.fadeIn('fast');
@@ -10,75 +10,77 @@ jQuery(function($){
 		}
 	});
 
-	$('.price').priceFormat({
+	jQuery('.price').priceFormat({
 	    prefix: 'R$ ',
 	    centsSeparator: ',',
 	    thousandsSeparator: '.'
 	});
-
-	$('.colorSelector1').ColorPicker({
-		color: $('.colorSelector1 input').val(),
+	
+	jQuery('.colorSelector1').ColorPicker({
+		color: jQuery('.colorSelector1 input').val(),
 		onShow: function (picker) {
-			if(!$(picker).is(':visible')){
-				$(picker).fadeIn(500);
+			if(!jQuery(picker).is(':visible'))
+			{
+				jQuery(picker).fadeIn(500);
 			}
-
+	
 			return false;
 		},
 		onHide: function (picker) {
-			if($(picker).is(':visible')){
-				$(picker).fadeOut(500);
+			if(jQuery(picker).is(':visible')){
+				jQuery(picker).fadeOut(500);
 			}
-
 			return false;
 		},
 		onChange: function (hsb, hex, rgb) {
-			$('.colorSelector1 div').css('backgroundColor', '#' + hex);
-			$('.colorSelector1 input').val('#' + hex);
+			jQuery('.colorSelector1 div').css('backgroundColor', '#' + hex);
+			jQuery('.colorSelector1 input').val('#' + hex);
 		}
 	});
 
-	$('.colorSelector2').ColorPicker({
-		color: $('.colorSelector2 input').val(),
+	jQuery('.colorSelector2').ColorPicker({
+		color: jQuery('.colorSelector2 input').val(),
 		onShow: function (colpkr) {
-			if(!$(colpkr).is(':visible')){
-				$(colpkr).fadeIn(500);
+			if(!jQuery(colpkr).is(':visible')){
+				jQuery(colpkr).fadeIn(500);
 			}
 
 			return false;
 		},
 		onHide: function (colpkr) {
-			if($(colpkr).is(':visible')){
-				$(colpkr).fadeOut(500);
+			if(jQuery(colpkr).is(':visible')){
+				jQuery(colpkr).fadeOut(500);
 			}
 
 			return false;
 		},
 		onChange: function (hsb, hex, rgb) {
-			$('.colorSelector2 div').css('backgroundColor', '#' + hex);
-			$('.colorSelector2 input').val('#' + hex);
+			jQuery('.colorSelector2 div').css('backgroundColor', '#' + hex);
+			jQuery('.colorSelector2 input').val('#' + hex);
 		}
 	});
 
-	$('.colorSelector3').ColorPicker({
-		color: $('.colorSelector3 input').val(),
+	jQuery('.colorSelector3').ColorPicker({
+		color: jQuery('.colorSelector3 input').val(),
 		onShow: function (colpkr) {
-			if(!$(colpkr).is(':visible')){
-				$(colpkr).fadeIn(500);
+			if(!jQuery(colpkr).is(':visible')){
+				jQuery(colpkr).fadeIn(500);
 			}
 
 			return false;
 		},
 		onHide: function (colpkr) {
-			if($(colpkr).is(':visible')){
-				$(colpkr).fadeOut(500);
+			if(jQuery(colpkr).is(':visible')){
+				jQuery(colpkr).fadeOut(500);
 			}
 
 			return false;
 		},
 		onChange: function (hsb, hex, rgb) {
-			$('.colorSelector3 div').css('backgroundColor', '#' + hex);
-			$('.colorSelector3 input').val('#' + hex);
+			jQuery('.colorSelector3 div').css('backgroundColor', '#' + hex);
+			jQuery('.colorSelector3 input').val('#' + hex);
 		}
 	});
+
+	
 });;

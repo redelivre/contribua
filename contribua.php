@@ -18,6 +18,6 @@ define('CONTRIBUA_PATH', dirname(__FILE__));
 // Dependences //
 //////////////////
 
-require CONTRIBUA_PATH.'/vendor.php';
+require CONTRIBUA_PATH.'/includes/Contribua.php';
 require CONTRIBUA_PATH.'/widget.php';
 require CONTRIBUA_PATH.'/includes/functions.php';
