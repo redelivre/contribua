@@ -32,31 +32,22 @@
 			<div class="cores">
 				<label class="description">Institucional</label>
 				<div class="clear"></div>
-				<div class="colorSelector1">
-					<div style="background-color: <?php echo is_null(Contribua::getOption('color_institucional')) ? '#44ab15' : Contribua::getOption('color_institucional'); ?>; width: 70px; height: 70px;"></div>
-					<input name="color_institucional" type="hidden" value="<?php echo is_null(Contribua::getOption('color_institucional')) ? '#44ab15' : Contribua::getOption('color_institucional'); ?>">
-				</div>
-
+				<input type="text" name="color_institucional" value="<?php echo is_null(Contribua::getOption('color_institucional')) ? '#44ab15' : Contribua::getOption('color_institucional'); ?>" class="colorSelector1">
 				<div class="clear"></div>
 			</div>
 
 			<div class="cores">
 				<label class="description">Projeto</label>
 				<div class="clear"></div>
-				<div class="colorSelector2">
-					<div style="background-color: <?php echo is_null(Contribua::getOption('color_projeto')) ? '#cc1504' : Contribua::getOption('color_projeto'); ?>; width: 70px; height: 70px;"></div>
-					<input name="color_projeto" type="hidden" value="<?php echo is_null(Contribua::getOption('color_projeto')) ? '#cc1504' : Contribua::getOption('color_projeto'); ?>">
-				</div>
+				<input type="text" name="color_projeto" value="<?php echo is_null(Contribua::getOption('color_projeto')) ? '#cc1504' : Contribua::getOption('color_projeto'); ?>" class="colorSelector2">
 				<div class="clear"></div>
 			</div>
 
 			<div class="cores">
 				<label class="description">Outros</label>
+				<input type="text" name="color_outros" value="<?php echo is_null(Contribua::getOption('color_outros')) ? '#1e1e7d' : Contribua::getOption('color_outros'); ?>" class="colorSelector3">
 				<div class="clear"></div>
-				<div class="colorSelector3">
-					<div style="background-color: <?php echo is_null(Contribua::getOption('color_outros')) ? '#1e1e7d' : Contribua::getOption('color_outros'); ?>; width: 70px; height: 70px;"></div>
-					<input name="color_outros" type="hidden" value="<?php echo is_null(Contribua::getOption('color_outros')) ? '#1e1e7d' : Contribua::getOption('color_outros'); ?>">
-				</div>
+				<div class="clear"></div>
 			</div>
 		</p>
 

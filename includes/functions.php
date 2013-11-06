@@ -26,7 +26,6 @@ function contribua_add_javascripts()
 	if ('contribua' == get_page_template_slug()
 			|| is_active_widget(false, false, "contribua_widget", true))
 	{
-		wp_enqueue_script('Contribua_colorpicker', plugins_url('/contribua/assets/js/vendor/colorpicker/js/colorpicker.js', CONTRIBUA_PATH));
 		wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
 		wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 		wp_enqueue_script('Contribua_template', plugins_url('/contribua/assets/js/template.js', CONTRIBUA_PATH));
@@ -43,7 +42,7 @@ add_action('wp_enqueue_scripts', 'contribua_add_javascripts');
 function contribua_admin_styles()
 {
 	wp_enqueue_style('style-app',  plugins_url('/contribua/assets/css/app.css', CONTRIBUA_PATH));
-	wp_enqueue_style('style-color-picker', plugins_url('/contribua/assets/js/vendor/colorpicker/css/colorpicker.css', CONTRIBUA_PATH));
+	wp_enqueue_style('wp-color-picker');
 }
 
 add_action('admin_enqueue_scripts', 'contribua_admin_styles');
@@ -54,8 +53,7 @@ add_action('admin_enqueue_scripts', 'contribua_admin_styles');
  */
 function contribua_admin_scripts()
 {
-	wp_enqueue_script('Contribua_colorpicker', plugins_url('/contribua/assets/js/vendor/colorpicker/js/colorpicker.js', CONTRIBUA_PATH));
-	wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
+	wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH), array('wp-color-picker'));
 }
 
 add_action('admin_enqueue_scripts', 'contribua_admin_scripts');
