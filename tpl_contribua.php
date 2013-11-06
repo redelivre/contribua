@@ -5,7 +5,7 @@
     //$options = Contribua::getOption();
 
     // add css style
-    //wp_enqueue_style('mobilize', get_bloginfo('url').'/wp-content/plugins/Mobilize/css/mobilize.css');
+    //wp_enqueue_style('contribua', get_bloginfo('url').'/wp-content/plugins/Contribua/css/contribua.css');
     
     // header insertion
     get_header();
@@ -62,15 +62,15 @@
     }
 ?>
 
-<section id="mobilize-content">
+<section id="contribua-content">
 
-	<?php /*if (Mobilize::isActive('general')):*/ ?>
+	<?php /*if (Contribua::isActive('general')):*/ ?>
         <h1>Apoie este projeto</h1>
         <div class="section-description">
             <p><?php // echo isset($options['general']['description']) && !empty($options['general']['description']) ? $options['general']['description'] : 'Nesta página, você encontra diferentes formas de mobilização e apoio.'; ?></p>
         </div>
     
-        <section class="mobilize-widget clearfix">
+        <section class="contribua-widget clearfix">
                 <h6>Contribuição</h6>
                 <p><?php if(trim(Contribua::getOption('descricao')) == '') { echo Contribua::TEXTO_DESCRITIVO_PADRAO; } else { echo Contribua::getOption('descricao'); } ?></p>
                 
@@ -84,7 +84,7 @@
                         <!-- /input data -->
 
                         <div class="contribution">
-                            <p class="description"><?php echo Contribua::getOption('descricao_contribuicaofixa1'); ?></p>
+                            <p class="description"><?php echo wp_trim_words(Contribua::getOption('descricao_contribuicaofixa1'), 50); ?></p>
 
                             <h3 class="price" <?php echo $color1; ?>><?php echo str_replace(array('R$', ' '), array('<span>R$</span>', ''), Contribua::getOption('valor_contribuicaofixa1')); ?></h3>
 
@@ -104,7 +104,7 @@
                             <input type="hidden" name="nome" value="<?php echo mount_desc(Contribua::getOption('tipo_contribuicaofixa2'), Contribua::getOption('descricao_contribuicaofixa2')); ?>">
                             <!-- /input data -->
 
-                            <p class="description"><?php echo Contribua::getOption('descricao_contribuicaofixa2'); ?></p>
+                            <p class="description"><?php echo wp_trim_words(Contribua::getOption('descricao_contribuicaofixa2'), 50); ?></p>
 
                             <h3 class="price" <?php echo $color2; ?>><?php echo str_replace(array('R$', ' '), array('<span>R$</span>', ''), Contribua::getOption('valor_contribuicaofixa2')); ?></h3>
 
@@ -124,7 +124,7 @@
                             <input type="hidden" name="nome" value="<?php echo mount_desc(Contribua::getOption('tipo_contribuicaofixa3'), Contribua::getOption('descricao_contribuicaofixa3')); ?>">
                             <!-- /input data -->
 
-                            <p class="description"><?php echo Contribua::getOption('descricao_contribuicaofixa3'); ?></p>
+                            <p class="description"><?php echo wp_trim_words(Contribua::getOption('descricao_contribuicaofixa3'), 50); ?></p>
 
                             <h3 class="price" <?php echo $color3; ?>><?php echo str_replace(array('R$', ' '), array('<span>R$</span>', ''), Contribua::getOption('valor_contribuicaofixa3')); ?></h3>
 
@@ -144,7 +144,7 @@
                             <input type="hidden" name="nome" value="<?php echo mount_desc('', Contribua::getOption('descricao_contribuicaolivre')); ?>">
                             <!-- /input data -->
 
-                            <p class="description"><?php echo Contribua::getOption('descricao_contribuicaolivre'); ?></p>
+                            <p class="description"><?php echo wp_trim_words(Contribua::getOption('descricao_contribuicaolivre'), 50); ?></p>
 
                             <div class="price-livre">
                                 <input class="valor-livre-input price" type="text" placeholder="Digite seu valor" style="border: 1px solid #DDD;">
@@ -157,6 +157,6 @@
                 <?php } ?>
         </section>
 </section>
-<!-- #mobilize-content -->        
+<!-- #contribua-content -->        
 
 <?php get_footer(); ?>
