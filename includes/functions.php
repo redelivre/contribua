@@ -6,8 +6,12 @@
  */
 function contribua_add_stylesheets()
 {
-	wp_enqueue_style('style-jqueryui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
-	wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
+	if ('contribua' == get_page_template_slug())
+	{
+		wp_enqueue_style('style-jqueryui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
+		wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
+		wp_enqueue_style('style-page', plugins_url('/contribua/assets/css/app.css', CONTRIBUA_PATH));
+	}
 }
 
 add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
@@ -18,11 +22,13 @@ add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
  */
 function contribua_add_javascripts()
 {
-	//wp_enqueue_script('script-jquery', 'http://code.jquery.com/jquery-1.9.1.js');
-	wp_enqueue_script('Contribua_colorpicker', plugins_url('/contribua/assets/js/vendor/colorpicker/js/colorpicker.js', CONTRIBUA_PATH));
-	wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
-	wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
-	wp_enqueue_script('Contribua_template', plugins_url('/contribua/assets/js/template.js', CONTRIBUA_PATH));
+	if ('contribua' == get_page_template_slug())
+	{
+		wp_enqueue_script('Contribua_colorpicker', plugins_url('/contribua/assets/js/vendor/colorpicker/js/colorpicker.js', CONTRIBUA_PATH));
+		wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
+		wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
+		wp_enqueue_script('Contribua_template', plugins_url('/contribua/assets/js/template.js', CONTRIBUA_PATH));
+	}
 	
 }
 
