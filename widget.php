@@ -24,11 +24,11 @@ class ContribuaWidget extends WP_Widget
 
 	public function form($instance) 
 	{
-		$id_carteira    = isset($instance['id_carteira']) ? $instance['id_carteira'] : '';
-		$pagina_retorno = isset($instance['pagina_retorno']) ? $instance['pagina_retorno'] : '';
-		$tipo_projeto   = isset($instance['tipo_projeto']) ? $instance['tipo_projeto'] : '';
-		$descricao      = isset($instance['descricao']) ? $instance['descricao'] : '';
-		$valor          = isset($instance['valor']) ? $instance['valor'] : '';
+		$id_carteira    = array_key_exists('id_carteira', $instance) ? $instance['id_carteira'] : '';
+		$pagina_retorno = array_key_exists('pagina_retorno', $instance) ? $instance['pagina_retorno'] : '';
+		$tipo_projeto   = array_key_exists('tipo_projeto', $instance) ? $instance['tipo_projeto'] : '';
+		$descricao      = array_key_exists('descricao', $instance) ? $instance['descricao'] : '';
+		$valor          = array_key_exists('valor', $instance) ? $instance['valor'] : '';
 
 		require CONTRIBUA_PATH.'/views/template-admin-widget.php';
 	}
