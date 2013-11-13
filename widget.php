@@ -14,6 +14,11 @@ class ContribuaWidget extends WP_Widget
 
 	public function widget($args, $instance)
 	{
+		wp_enqueue_style('style-jqueryui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
+		wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
+		wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
+		wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
+
 		require CONTRIBUA_PATH.'/views/template-content-widget.php';	
 	}
 
