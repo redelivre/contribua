@@ -15,8 +15,4 @@ jQuery( document ).ready(function(){
 	    centsSeparator: ',',
 	    thousandsSeparator: '.'
 	});
-	
-	jQuery('.colorSelector1').wpColorPicker();
-	jQuery('.colorSelector2').wpColorPicker();
-	jQuery('.colorSelector3').wpColorPicker();
-});;
+});
