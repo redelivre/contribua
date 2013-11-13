@@ -7,8 +7,14 @@
         <!-- /input data -->
 
         <div class="contribution">
-            <p class="description"><?php echo create_excerpt($instance['descricao']); ?></p>
-            <h3 class="price"><?php echo $instance['valor']; ?></h3>
+            <p class="description">
+							<?php echo create_excerpt((array_key_exists('descricao',
+											$instance)? $instance['descricao'] : '')); ?>
+						</p>
+            <h3 class="price">
+							<?php echo (array_key_exists('valor', $instance)?
+									$instance['valor'] : ''); ?>
+						</h3>
             <input type="submit" value="Contribuir">
         </div>
 
