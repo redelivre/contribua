@@ -1,5 +1,5 @@
 <div class="contribua-widget-wrapper" style="padding: 0;">
-    <form target="_blank" class="form-moip1" action="https://www.moip.com.br/PagamentoMoIP.do" method="post">
+    <form target="_blank" class="form-moip1" action="https://www.moip.com.br/PagamentoSimples.do" method="post">
         <!-- input data -->
         <input type="hidden" name="id_carteira" value="<?php echo $instance['id_carteira']; ?>">
         <input type="hidden" name="valor" value="<?php echo str_replace(array('R$', ',', '.', ' '), array('', '', '', ''), $instance['valor']); ?>">

@@ -4,7 +4,7 @@
         
         <?php if(Contribua::getOption('mm_checkbox_contribuicaofixa1') == 'true') { ?>
         <div class="contribua-contribution-wrapper" style="padding: 0;">
-            <form target="_blank" class="form-moip1" action="https://www.moip.com.br/PagamentoMoIP.do" method="post">
+            <form target="_blank" class="form-moip1" action="https://www.moip.com.br/PagamentoSimples.do" method="post">
                 <!-- input data -->
                 <input type="hidden" name="id_carteira" value="<?php echo Contribua::getOption('mm_carteira'); ?>">
                 <input type="hidden" name="valor" value="<?php echo str_replace(array('R$', ',', '.', ' '), array('', '', '', ''), Contribua::getOption('mm_valor_contribuicaofixa1')); ?>">
@@ -24,7 +24,7 @@
 
         <?php if(Contribua::getOption('mm_checkbox_contribuicaofixa3') == 'true') { ?>
         <div class="contribua-contribution-wrapper">
-            <form target="_blank" class="form-moip2" action="https://www.moip.com.br/PagamentoMoIP.do" method="post">
+            <form target="_blank" class="form-moip2" action="https://www.moip.com.br/PagamentoSimples.do" method="post">
                 <div class="contribua-contribution">
                     <!-- input data -->
                     <input type="hidden" name="id_carteira" value="<?php echo Contribua::getOption('mm_carteira'); ?>">
@@ -44,7 +44,7 @@
 
         <?php if(Contribua::getOption('mm_checkbox_contribuicaolivre') == 'true') { ?>
         <div class="contribua-contribution-wrapper">
-            <form target="_blank" class="form-moip3" action="https://www.moip.com.br/PagamentoMoIP.do" method="post">
+            <form target="_blank" class="form-moip3" action="https://www.moip.com.br/PagamentoSimples.do" method="post">
                 <div class="contribua-contribution">
                     <!-- input data -->
                     <input type="hidden" name="id_carteira" value="<?php echo Contribua::getOption('mm_carteira'); ?>">
@@ -64,7 +64,7 @@
         
         <?php if(Contribua::getOption('mm_checkbox_contribuicaofixa3') == 'true') { ?>
         <div class="contribua-contribution-wrapper">
-            <form target="_blank" class="form-moip4" action="https://www.moip.com.br/PagamentoMoIP.do" method="post">
+            <form target="_blank" class="form-moip4" action="https://www.moip.com.br/PagamentoSimples.do" method="post">
                 <div class="contribua-contribution">
                     <!-- input data -->
                     <input type="hidden" name="id_carteira" value="<?php echo Contribua::getOption('mm_carteira'); ?>">
