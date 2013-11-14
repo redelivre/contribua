@@ -11,8 +11,8 @@
 							<?php echo create_excerpt($descricao); ?>
 						</p>
             <h3 class="contribua-price"
-							<?php echo 'style="color: "'
-								. Contribua::getColorByType($tipo_projeto); ?> >
+							<?php echo 'style="color: '
+								. Contribua::getColorByType($tipo_projeto) . '"'; ?> >
 							<?php echo $valor; ?>
 						</h3>
             <input type="submit" value="Contribuir">
