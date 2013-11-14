@@ -153,6 +153,16 @@ class Contribua
     	return $single_template;
     }
     
+	public static function getColorByType($type) {
+		switch ($type) {
+			case '1':
+				return Contribua::getOption('color_institucional');
+			case '2':
+				return Contribua::getOption('color_projeto');
+			default:
+				return Contribua::getOption('color_outros');
+		}
+	}
 }
 
 add_action('add_meta_boxes', array('Contribua', 'createPageTemplate'));

@@ -18,6 +18,11 @@ class ContribuaWidget extends WP_Widget
 		wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
 		wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
 		wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
+		$id_carteira    = array_key_exists('id_carteira', $instance) ? $instance['id_carteira'] : '';
+		$pagina_retorno = array_key_exists('pagina_retorno', $instance) ? $instance['pagina_retorno'] : '';
+		$tipo_projeto   = array_key_exists('tipo_projeto', $instance) ? $instance['tipo_projeto'] : 1;
+		$descricao      = array_key_exists('descricao', $instance) ? $instance['descricao'] : '';
+		$valor          = array_key_exists('valor', $instance) ? $instance['valor'] : '';
 
 		require CONTRIBUA_PATH.'/views/template-content-widget.php';	
 	}
@@ -26,7 +31,7 @@ class ContribuaWidget extends WP_Widget
 	{
 		$id_carteira    = array_key_exists('id_carteira', $instance) ? $instance['id_carteira'] : '';
 		$pagina_retorno = array_key_exists('pagina_retorno', $instance) ? $instance['pagina_retorno'] : '';
-		$tipo_projeto   = array_key_exists('tipo_projeto', $instance) ? $instance['tipo_projeto'] : '';
+		$tipo_projeto   = array_key_exists('tipo_projeto', $instance) ? $instance['tipo_projeto'] : 1;
 		$descricao      = array_key_exists('descricao', $instance) ? $instance['descricao'] : '';
 		$valor          = array_key_exists('valor', $instance) ? $instance['valor'] : '';
 
@@ -44,7 +49,6 @@ class ContribuaWidget extends WP_Widget
 
 		return $instance;
 	}
-
 }
 
 add_action('widgets_init', function(){ 

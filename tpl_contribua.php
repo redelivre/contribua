@@ -13,20 +13,6 @@
     // global variables
     global $user_ID;
 
-    function hex_color_type($type){
-        switch ($type) {
-            case '1':
-                return Contribua::getOption('color_institucional');
-                break;
-            case '2':
-                return Contribua::getOption('color_projeto');
-                break;
-            case '3':
-                return Contribua::getOption('color_outros');
-                break;
-        }
-    }
-
     function contribuicao_type($type) {
         switch ($type) {
             case '1':
@@ -50,15 +36,15 @@
     }
 
     if (Contribua::getOption('contribuicaofixa1') == 'true') {
-        $color1 = 'style="color: '.hex_color_type(Contribua::getOption('tipo_contribuicaofixa1')).';"';
+        $color1 = 'style="color: '.Contribua::getColorByType(Contribua::getOption('tipo_contribuicaofixa1')).';"';
     }
 
     if (Contribua::getOption('contribuicaofixa2') == 'true') {
-        $color2 = 'style="color: '.hex_color_type(Contribua::getOption('tipo_contribuicaofixa2')).';"';
+        $color2 = 'style="color: '.Contribua::getColorByType(Contribua::getOption('tipo_contribuicaofixa2')).';"';
     }
 
     if (Contribua::getOption('contribuicaofixa3') == 'true') {
-        $color3 = 'style="color: '.hex_color_type(Contribua::getOption('tipo_contribuicaofixa3')).';"';
+        $color3 = 'style="color: '.Contribua::getColorByType(Contribua::getOption('tipo_contribuicaofixa3')).';"';
     }
 ?>
 
