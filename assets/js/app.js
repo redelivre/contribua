@@ -10,7 +10,7 @@ jQuery( document ).ready(function(){
 		}
 	});
 
-	jQuery('.price').priceFormat({
+	jQuery('.contribua-price').priceFormat({
 	    prefix: 'R$ ',
 	    centsSeparator: ',',
 	    thousandsSeparator: '.'

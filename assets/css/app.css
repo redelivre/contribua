@@ -1,15 +1,13 @@
-.clear { clear: both; }
-
 .moip-check { cursor: pointer; }
 
-.contribuicao {
+.contribua-contribuicao {
 	display: inline-block;
 	margin-top: 10px;
 	padding-bottom: 5px;
 	border-bottom: 1px dashed #999;
 }
 
-.colorSelector1, .colorSelector2, .colorSelector3 {
+.contribua-color-picker {
 	float: left;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -21,17 +19,17 @@
 	border: 2px solid #FFF;
 }
 
-.cores {
+.contribua-cores {
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 5px;
 }
 
-.cores label.description {
+.contribua-cores label.contribua-description {
 	text-align: center;
 }
 
-.cores label {
+.contribua-cores label {
 	display: block;
 	margin-bottom: 2px;
 }
@@ -40,75 +38,6 @@
   margin: 0 auto;
   padding: 22px 0 44px;
   margin-top: 20px;
-}
-
-#contribua-banners img {
-  display: block;
-}
-
-.contribua-banners {
-  float: left;
-  width: 33.3333%;
-  text-align:  center;
-}
-
-.banner-250 img {
-  margin: 0 auto 22px !important;
-}
-
-.banner-200 img {
-  margin: 25px auto 47px !important;
-}
-
-.banner-125 img {
-  margin: 63px auto 84px !important;
-  height:  250px;
-}
-
-.code {
-  background: #f1f1f1 !important;
-  border: 1px solid #ccc !important;
-  font-family: "Courier New",monospace !important;
-  font-size: 12px !important;
-  color: #666 !important;
-  word-break: break-all !important;
-}
-
-textarea.code {
-  height: 66px;
-  padding: 10px;
-  width: 88%;
-}
-
-input.code {
-  width: 90%;
-}
-
-#contribua-sticker p {
-  float: left;
-}
-
-.sticked-avatar {
-  float: left;
-  width: 100%;
-  margin: 0 10px;
-  margin-bottom: 5px;
-  position: relative;
-  margin-left: 0px !important;
-  margin-bottom: 10px !important;
-}
-
-.sticked-avatar .sticker {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-img.sticker {
-  max-width: 80px;
-  max-height: 80px;
-  display: inline-block;
-  margin-right: 2px;
 }
 
 #contribua-sendto-form textarea {
@@ -156,61 +85,15 @@ img.sticker {
   width: 100px !important;
 }
 
-.error,.alert,.notice,.success,.info {
-  padding: 0.8em;
-  margin-bottom: 1em;
-  border: 2px solid #ddd;
-}
-
-.error,.alert {
-  background: #fbe3e4;
-  color: #8a1f11;
-  border-color: #fbc2c4;
-}
-
-.notice {
-  background: #fff6bf;
-  color: #514721;
-  border-color: #ffd324;
-}
-
-.success {
-  background: #e6efc2;
-  color: #264409;
-  border-color: #c6d880;
-}
-
-.info {
-  background: #d5edf8;
-  color: #205791;
-  border-color: #92cae4;
-}
-
-.error a,.alert a {
-  color: #8a1f11;
-}
-
-.notice a {
-  color: #514721;
-}
-
-.success a {
-  color: #264409;
-}
-
-.info a {
-  color: #205791;
-}
-
-.clear {
+.contribua-clear {
   clear: both;
 }
 
-.contribution: first-child {
+.contribua-contribution: first-child {
   margin: 0;
 }
 
-.contribution-wrapper {
+.contribua-contribution-wrapper {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -219,7 +102,7 @@ img.sticker {
   padding-left: 10px;
 }
 
-.contribution {
+.contribua-contribution {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -228,7 +111,7 @@ img.sticker {
   width: 100%;
 }
 
-p.description {
+p.contribua-description {
   padding: 10px !important;
   background: #E9E9E9;
   color: #333;
@@ -240,7 +123,7 @@ p.description {
   overflow: hidden;
 }
 
-h3.price {
+h3.contribua-price {
   margin: 0;
   font-size: 44px;
   text-align: center;
@@ -248,7 +131,7 @@ h3.price {
   padding-top: 10px;
 }
 
-h3.price span {
+h3.contribua-price span {
   font-weight: normal;
   font-size:  15px;
 }
@@ -287,12 +170,12 @@ a.link-contribua {
   *margin-left: .3em;
 }
 
-div.price-livre {
+div.contribua-price-livre {
   padding: 10px 9px 0 10px !important;
   height: 100px !important;
 }
 
-div.price-livre input {
+div.contribua-price-livre input {
   width: 100%;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -332,7 +215,7 @@ div.price-livre input {
   text-transform: uppercase;
 }
 
-.contribua-widget .section-description {
+.contribua-widget .contribua-section-description {
   width: 100%;
 }
 
@@ -368,61 +251,6 @@ div.price-livre input {
 
 .contribua-button.contribua-youtube {
   background: none repeat scroll 0 0 #D02525;
-}
-
-.contribua-banners {
-  float: left;
-  text-align: center;
-  width: 33.333%;
-  padding-left: 10px;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-.contribua-banners textarea, .contribua-banners input {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-.contribua-banners div[class^="banner-"] {
-  height: 250px;
-  position: relative;
-}
-
-.contribua-banners .banner-200 img,.contribua-banners .banner-125 img {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-}
-
-.contribua-banners .banner-200 img {
-  margin-left: -100px;
-  margin-top: -100px;
-}
-
-.contribua-banners .banner-125 img {
-  margin-left: -75px;
-  margin-top: -75px;
-}
-
-.contribua-banners .code {
-  background: none repeat scroll 0 0 #F9F7F2;
-  border: 1px solid #F4F0E6;
-  border-radius: 3px 3px 3px 3px;
-  font-family: Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace;
-  font-size: 0.75em;
-  margin-top: 1.143em;
-  max-width: 100%;
-  padding: 0.5em;
-  resize: none;
-  width: 100%;
-  word-break: break-all;
-}
-
-.contribua-banners textarea.code {
-  height: 100px;
 }
 
 #standard-message {
@@ -464,29 +292,6 @@ div.price-livre input {
   min-height: 10em;
 }
 
-.image-banner {
-  height: 250px;
-  position: relative;
-}
-
-.image-banner img {
-  display: block;
-  position: absolute;
-  bottom: 0;
-}
-
-.image-banner-1 {
-  left: 15px;
-}
-
-.image-banner-2 {
-  left: 34px;
-}
-
-.image-banner-3 {
-  left: 70px;
-}
-
 .contribua-enviar-button {
   width: 100%;
   margin-top: 10px;
@@ -497,8 +302,4 @@ div.price-livre input {
   top: -999px;
   left: -999px;
   visibility: hidden;
-}
-
-#contribua-sticker p.section-description {
-  margin-bottom: 0;
 }

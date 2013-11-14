@@ -9,7 +9,7 @@
 	overflow: hidden;
 }
 
-.contribua-widget-wrapper p.description {
+.contribua-widget-wrapper p.contribua-description {
 	padding: 10px;
 	background: #E9E9E9;
 	color: #333;
@@ -18,7 +18,7 @@
 	margin-bottom: 0;
 }
 
-.contribua-widget-wrapper h3.price {
+.contribua-widget-wrapper h3.contribua-price {
 	margin: 0;
 	font-size: 40px !important;
 	text-align: center;

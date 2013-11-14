@@ -6,12 +6,12 @@
         <input type="hidden" name="nome" value="<?php echo remove_accents('Contribuicao - '.$instance['descricao']); ?>">
         <!-- /input data -->
 
-        <div class="contribution">
-            <p class="description">
+        <div class="contribua-contribution">
+            <p class="contribua-description">
 							<?php echo create_excerpt((array_key_exists('descricao',
 											$instance)? $instance['descricao'] : '')); ?>
 						</p>
-            <h3 class="price">
+            <h3 class="contribua-price">
 							<?php echo (array_key_exists('valor', $instance)?
 									$instance['valor'] : ''); ?>
 						</h3>

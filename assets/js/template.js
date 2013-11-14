@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-	$('div.price-livre input').priceFormat({
+	$('div.contribua-price-livre input').priceFormat({
 	    prefix: 'R$ ',
 	    centsSeparator: ',',
 	    thousandsSeparator: '.'
