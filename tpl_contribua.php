@@ -13,26 +13,12 @@
     // global variables
     global $user_ID;
 
-    function contribuicao_type($type) {
-        switch ($type) {
-            case '1':
-                return ' - Institucional - ';
-                break;
-            case '2':
-                return ' - Projeto - ';
-                break;
-            case '3':
-                return ' - Outro - ';
-                break;
-            default:
-                return ' - ';
-                break;
-        }
-    }
-
     function mount_desc($type, $descricao)
     {
-        return 'Contribuicao'.contribuicao_type($type).remove_accents($descricao);
+        return 'Contribuicao - '
+					. Contribua::getTypeName($type)
+					. ' - '
+					. remove_accents($descricao);
     }
 
     if (Contribua::getOption('contribuicaofixa1') == 'true') {
