@@ -19,10 +19,10 @@
 
 <p>
 	<label for="<?php echo $this->get_field_name('descricao'); ?>">Descrição:</label> 
-	<textarea class="widefat" id="<?php echo $this->get_field_id('descricao'); ?>" rows="10"  name="<?php echo $this->get_field_name('descricao'); ?>"><?php echo $descricao; ?></textarea>
+	<textarea class="contribua-description" id="<?php echo $this->get_field_id('descricao'); ?>" rows="10"  name="<?php echo $this->get_field_name('descricao'); ?>"><?php echo $descricao; ?></textarea>
 </p>
 
 <p>
 	<label for="<?php echo $this->get_field_name('valor'); ?>">Valor:</label> 
-	<input rel="price-format" class="widefat" id="<?php echo $this->get_field_id('valor'); ?>" type="text" name="<?php echo $this->get_field_name('valor'); ?>" value="<?php echo $valor; ?>">
+	<input rel="price-format" class="contribua-price" id="<?php echo $this->get_field_id('valor'); ?>" type="text" name="<?php echo $this->get_field_name('valor'); ?>" value="<?php echo $valor; ?>">
 </p>
