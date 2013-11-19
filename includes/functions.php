@@ -53,7 +53,9 @@ add_action('admin_enqueue_scripts', 'contribua_admin_styles');
  */
 function contribua_admin_scripts()
 {
-	wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/admin.js', CONTRIBUA_PATH), array('wp-color-picker'));
+	wp_enqueue_script('script-admin', plugins_url('/contribua/assets/js/admin.js', CONTRIBUA_PATH), array('wp-color-picker'));
+	wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
+	wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 }
 
 add_action('admin_enqueue_scripts', 'contribua_admin_scripts');
