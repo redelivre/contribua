@@ -2,7 +2,7 @@
 
 class Contribua
 {	
-	const TEXTO_DESCRITIVO_PADRAO = 'Selecine ou insira um valor para sua contribuição. Ao clicar no botão, você será direcionado à área de pagamento.';
+	const TEXTO_DESCRITIVO_PADRAO = 'Selecione ou insira um valor para sua contribuição. Ao clicar no botão, você será direcionado à área de pagamento.';
 
 	/**
 	 * [getOption description]
