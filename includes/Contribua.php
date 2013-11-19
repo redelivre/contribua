@@ -124,7 +124,7 @@ class Contribua
             {
                 update_post_meta( $post_ID, '_wp_page_template', 'contribua' );
             }
-            else
+            else if(get_post_meta( $post_ID, '_wp_page_template', true ) === 'contribua')
             {
                 update_post_meta( $post_ID, '_wp_page_template', 'default' );
             }
