@@ -6,7 +6,8 @@
  */
 function contribua_add_stylesheets()
 {
-	if ('contribua' == get_page_template_slug())
+	global $post;
+	if (isset($post) && 'contribua' == get_page_template_slug())
 	{
 		wp_enqueue_style('style-jqueryui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
 		wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
@@ -22,7 +23,8 @@ add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
  */
 function contribua_add_javascripts()
 {
-	if ('contribua' == get_page_template_slug())
+	global $post;
+	if (isset($post) && 'contribua' == get_page_template_slug())
 	{
 		wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
 		wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
