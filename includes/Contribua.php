@@ -11,10 +11,9 @@ class Contribua
 	 */
 	public static function getOption($index) 
 	{
-		$options = get_option('contribua_options');
+		$options = get_option('contribua_options', array());
 
-		return ($options && array_key_exists($index, $options)?
-				$options[$index] : NULL);
+		return (array_key_exists($index, $options)?  $options[$index] : NULL);
 	}
 
 	/**
