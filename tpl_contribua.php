@@ -37,13 +37,9 @@
 <section id="contribua-content">
 
 	<?php /*if (Contribua::isActive('general')):*/ ?>
-        <h1>Apoie este projeto</h1>
-        <div class="contribua-section-description">
-            <p><?php // echo isset($options['general']['description']) && !empty($options['general']['description']) ? $options['general']['description'] : 'Nesta página, você encontra diferentes formas de mobilização e apoio.'; ?></p>
-        </div>
+        <h1><?php echo get_the_title(); ?></h1>
     
         <section class="contribua-widget clearfix">
-                <h6>Contribuição</h6>
                 <p><?php if(trim(Contribua::getOption('descricao')) == '') { echo Contribua::TEXTO_DESCRITIVO_PADRAO; } else { echo Contribua::getOption('descricao'); } ?></p>
                 
                 <?php if(Contribua::getOption('contribuicaofixa1') == 'true') { ?>
