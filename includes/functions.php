@@ -8,11 +8,7 @@ function contribua_add_stylesheets()
 {
 	global $post;
 	if (isset($post) && 'contribua' == get_page_template_slug())
-	{
-		wp_enqueue_style('style-jqueryui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
-		wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
-		wp_enqueue_style('style-page', plugins_url('/contribua/assets/css/app.css', CONTRIBUA_PATH));
-	}
+		Contribua::addStylesheet();
 }
 
 add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
@@ -25,12 +21,7 @@ function contribua_add_javascripts()
 {
 	global $post;
 	if (isset($post) && 'contribua' == get_page_template_slug())
-	{
-		wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
-		wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
-		wp_enqueue_script('Contribua_template', plugins_url('/contribua/assets/js/template.js', CONTRIBUA_PATH));
-	}
-	
+		Contribua::addJavascript();
 }
 
 add_action('wp_enqueue_scripts', 'contribua_add_javascripts');
@@ -41,8 +32,7 @@ add_action('wp_enqueue_scripts', 'contribua_add_javascripts');
  */
 function contribua_admin_styles()
 {
-	wp_enqueue_style('style-app',  plugins_url('/contribua/assets/css/app.css', CONTRIBUA_PATH));
-	wp_enqueue_style('wp-color-picker');
+	Contribua::addAdminStylesheet();
 }
 
 add_action('admin_enqueue_scripts', 'contribua_admin_styles');
@@ -53,9 +43,7 @@ add_action('admin_enqueue_scripts', 'contribua_admin_styles');
  */
 function contribua_admin_scripts()
 {
-	wp_enqueue_script('script-admin', plugins_url('/contribua/assets/js/admin.js', CONTRIBUA_PATH), array('wp-color-picker'));
-	wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
-	wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
+	Contribua::addAdminJavascript();
 }
 
 add_action('admin_enqueue_scripts', 'contribua_admin_scripts');
