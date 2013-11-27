@@ -86,74 +86,50 @@ class Contribua
 	{
 		return CONTRIBUA_PATH.'/tpl_Contribua.php';
 	}
-	
+
 	/**
 	 * [createPageTemplate description]
 	 * @return [type] [description]
 	 */
 	public static function createPageTemplate()
 	{
-		$screens = array( 'page' );
-		foreach ($screens as $screen)
-		{
-			global $_wp_post_type_features;
-			add_meta_box(
-					'contribua-meta',
-					__( 'Template Contribua', 'contribua' ),
-					function()
-					{
-						// Use nonce for verification
-						wp_nonce_field(plugin_basename( __FILE__ ), 'contribua_noncename');
-						?>
-	    					<input type="checkbox" name="contribua-template-checkbox" id="contribua-template-checkbox" class="contribua-template-checkbox" <?php echo get_page_template_slug() == 'contribua' ? 'checked="checked"': ''; ?> value="S" />
-	    					<label for="contribua-template-checkbox">Transforme essa página em Contribua</label>
-	    				<?php 
-	    			},
-	    			$screen,
-	    			'side'
-	    	);
-	    }
+		wp_enqueue_script('contribua-edit',
+				plugins_url('/contribua/assets/js/edit.js', CONTRIBUA_PATH));
+		wp_localize_script('contribua-edit', 'templateData',
+				array('slug' => get_page_template_slug()));
 	}
-	    
-    public static function savePage($post_id)
-    {
-    	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['post_ID'])) {
-            $post_ID = (int) $_POST['post_ID'];
 
-            if(array_key_exists('contribua-template-checkbox', $_POST) && $_POST['contribua-template-checkbox'] == 'S')
-            {
-                update_post_meta( $post_ID, '_wp_page_template', 'contribua' );
-            }
-            else if(get_post_meta( $post_ID, '_wp_page_template', true ) === 'contribua')
-            {
-                update_post_meta( $post_ID, '_wp_page_template', 'default' );
-            }
-        }
-    }
-    
+	public static function savePage($post_ID)
+	{
+		if(array_key_exists('page_template', $_POST)
+				&& $_POST['page_template'] == 'contribua')
+		{
+			update_post_meta($post_ID, '_wp_page_template', 'contribua');
+			$_POST['page_template'] = 'default';
+		}
+		else if(get_post_meta($post_ID, '_wp_page_template', true) === 'contribua')
+			update_post_meta($post_ID, '_wp_page_template', 'default');
+	}
+
     /**
-     * [mobilize_single_template description]
+     * [contribua_single_template description]
      * @param  [type] $single_template [description]
      * @return [type]                  [description]
      */
-    function single_template($single_template)
-    {
-    	if ('contribua' == get_page_template_slug()) {
-    		global $post, $user_ID;
-    
-    		$post_slug = $post->post_name;
-    
-    		/*add_action('wp_print_scripts', function() {
-    			wp_enqueue_script('mobilize', plugins_url('/mobilize/assets/js/mobilize.js', INC_MOBILIZE));
-    		});*/
-    
-    		$templateTheme = get_stylesheet_directory().'/contribua.php';
-    		return file_exists($templateTheme) ? $templateTheme : CONTRIBUA_PATH.'/tpl_contribua.php';
-    	}
-    
-    	return $single_template;
-    }
-    
+	function single_template($single_template)
+	{
+		global $post;
+		if ('contribua' == get_page_template_slug()) {
+
+			$post_slug = $post->post_name;
+
+			$templateTheme = get_stylesheet_directory().'/contribua.php';
+			return file_exists($templateTheme) ? $templateTheme : CONTRIBUA_PATH.'/tpl_contribua.php';
+		}
+
+		return $single_template;
+	}
+
 	public static function getColorByType($type) {
 		switch ($type) {
 			case '1':
