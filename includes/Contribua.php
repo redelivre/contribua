@@ -172,7 +172,7 @@ class Contribua
 		wp_enqueue_script('script-app',
 				plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 		wp_enqueue_script('Contribua_template',
-				plugins_url('/contribua/assets/js/template.js', CONTRIBUA_PATH));
+				plugins_url('/contribua/assets/js/moip.js', CONTRIBUA_PATH));
 	}
 
 	public static function addAdminStylesheet()
