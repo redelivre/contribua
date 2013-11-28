@@ -15,7 +15,13 @@ jQuery(document).ready(function($){
 	});
 
 	$('.link-moip4').click(function(){
-		$('.form-moip4').submit();
+		value = $('.form-moip4 input[name=valor-livre]').val();
+		value = value.replace(/[^0-9]/g, '');
+		if (value.length)
+		{
+			$('.form-moip4 input[name=valor]').val(value);
+			$('.form-moip4').submit();
+		}
 		return false;
 	});
 });
