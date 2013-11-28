@@ -24,5 +24,12 @@
 
 <p>
 	<label for="<?php echo $this->get_field_name('valor'); ?>">Valor:</label> 
-	<input rel="price-format" class="contribua-price" id="<?php echo $this->get_field_id('valor'); ?>" type="text" name="<?php echo $this->get_field_name('valor'); ?>" value="<?php echo $valor; ?>">
+	<input id="<?php echo $this->get_field_id('valor'); ?>"
+	type="text" name="<?php echo $this->get_field_name('valor'); ?>"
+	value="<?php echo $valor; ?>" onkeyup="contribuaPriceFormat(this);">
 </p>
+<script>
+	<?php require CONTRIBUA_PATH . '/assets/js/price.js'; ?>
+	contribuaPriceFormat(document.getElementById(
+				'<?php echo $this->get_field_id('valor') ?>'));
+</script>

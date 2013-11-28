@@ -97,7 +97,7 @@
 							<p class="contribua-description"><?php echo wp_trim_words(Contribua::getOption('descricao_contribuicaolivre'), 50); ?></p>
 
 							<div class="contribua-price-livre">
-								<input class="valor-livre-input price" type="text" placeholder="Digite seu valor" style="border: 1px solid #DDD;">
+								<input class="valor-livre-input contribua-price" type="text" placeholder="Digite seu valor" style="border: 1px solid #DDD;">
 							</div>
 
 							<a href="javascript:void(0);" class="link-moip4 link-contribua">Contribuir</a>

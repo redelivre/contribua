@@ -32,7 +32,8 @@ class ContribuaWidget extends WP_Widget
 		$pagina_retorno = array_key_exists('pagina_retorno', $instance) ? $instance['pagina_retorno'] : '';
 		$tipo_projeto   = array_key_exists('tipo_projeto', $instance) ? $instance['tipo_projeto'] : 1;
 		$descricao      = array_key_exists('descricao', $instance) ? $instance['descricao'] : '';
-		$valor          = array_key_exists('valor', $instance) ? $instance['valor'] : '';
+		$valor          = array_key_exists('valor', $instance) ?
+			$instance['valor'] : 'R$ 0.00';
 
 		require CONTRIBUA_PATH.'/views/template-admin-widget.php';
 	}
@@ -53,7 +54,6 @@ class ContribuaWidget extends WP_Widget
 add_action('widgets_init', function(){ 
 	add_action('admin_enqueue_scripts', function(){
 		wp_enqueue_script('script-contribua-price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
-		wp_enqueue_script('script-contribua-widget', plugins_url('/contribua/assets/js/widget.js', CONTRIBUA_PATH));
 	});
 
 	register_widget('ContribuaWidget'); 

@@ -10,9 +10,8 @@ jQuery( document ).ready(function(){
 		}
 	});
 
-	jQuery('.contribua-price').priceFormat({
-	    prefix: 'R$ ',
-	    centsSeparator: ',',
-	    thousandsSeparator: '.'
+	jQuery('.contribua-price').keyup(function (event)
+	{
+		contribuaPriceFormat(this);
 	});
 });

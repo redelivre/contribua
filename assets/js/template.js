@@ -1,10 +1,4 @@
 jQuery(document).ready(function($){
-	$('div.contribua-price-livre input').priceFormat({
-	    prefix: 'R$ ',
-	    centsSeparator: ',',
-	    thousandsSeparator: '.'
-	});
-
 	$('.link-moip1').click(function(){
 		$('.form-moip1').submit();
 		return false;
@@ -23,10 +17,5 @@ jQuery(document).ready(function($){
 	$('.link-moip4').click(function(){
 		$('.form-moip4').submit();
 		return false;
-	});
-
-	$('.valor-livre-input').keyup(function(){
-		var value = $(this).val();
-		$('.valor-livre-output').val(value.replace('R$', '').replace(' ', '').replace('.', '').replace(',', ''));
 	});
 });

@@ -167,8 +167,8 @@ class Contribua
 
 	public static function addJavascript()
 	{
-		wp_enqueue_script('price',
-				plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
+		wp_enqueue_script('contribua-price',
+				plugins_url('/contribua/assets/js/price.js', CONTRIBUA_PATH));
 		wp_enqueue_script('script-app',
 				plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 		wp_enqueue_script('Contribua_template',
@@ -187,8 +187,8 @@ class Contribua
 		wp_enqueue_script('script-admin',
 				plugins_url('/contribua/assets/js/admin.js', CONTRIBUA_PATH),
 				array('wp-color-picker'));
-		wp_enqueue_script('price',
-				plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
+		wp_enqueue_script('contribua-price',
+				plugins_url('/contribua/assets/js/price.js', CONTRIBUA_PATH));
 		wp_enqueue_script('script-app',
 				plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 	}
