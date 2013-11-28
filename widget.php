@@ -14,9 +14,8 @@ class ContribuaWidget extends WP_Widget
 
 	public function widget($args, $instance)
 	{
-		wp_enqueue_style('style-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
-		wp_enqueue_script('price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
-		wp_enqueue_script('script-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
+		wp_enqueue_style('contribua-css-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
+		wp_enqueue_script('contribua-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 		$id_carteira    = array_key_exists('id_carteira', $instance) ? $instance['id_carteira'] : '';
 		$pagina_retorno = array_key_exists('pagina_retorno', $instance) ? $instance['pagina_retorno'] : '';
 		$tipo_projeto   = array_key_exists('tipo_projeto', $instance) ? $instance['tipo_projeto'] : 1;
@@ -52,9 +51,5 @@ class ContribuaWidget extends WP_Widget
 }
 
 add_action('widgets_init', function(){ 
-	add_action('admin_enqueue_scripts', function(){
-		wp_enqueue_script('script-contribua-price', plugins_url('/contribua/assets/js/vendor/price.js', CONTRIBUA_PATH));
-	});
-
 	register_widget('ContribuaWidget'); 
 });

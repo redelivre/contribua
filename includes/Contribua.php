@@ -159,9 +159,9 @@ class Contribua
 
 	public static function addStylesheet()
 	{
-		wp_enqueue_style('style-widget',
+		wp_enqueue_style('contribua-css-widget',
 				plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
-		wp_enqueue_style('style-page',
+		wp_enqueue_style('contribua-css-app',
 				plugins_url('/contribua/assets/css/app.css', CONTRIBUA_PATH));
 	}
 
@@ -169,27 +169,27 @@ class Contribua
 	{
 		wp_enqueue_script('contribua-price',
 				plugins_url('/contribua/assets/js/price.js', CONTRIBUA_PATH));
-		wp_enqueue_script('script-app',
+		wp_enqueue_script('contribua-app',
 				plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
-		wp_enqueue_script('Contribua_template',
+		wp_enqueue_script('contribua-moip',
 				plugins_url('/contribua/assets/js/moip.js', CONTRIBUA_PATH));
 	}
 
 	public static function addAdminStylesheet()
 	{
-		wp_enqueue_style('style-app',
+		wp_enqueue_style('contribua-css-app',
 				plugins_url('/contribua/assets/css/app.css', CONTRIBUA_PATH));
 		wp_enqueue_style('wp-color-picker');
 	}
 
 	public static function addAdminJavascript()
 	{
-		wp_enqueue_script('script-admin',
+		wp_enqueue_script('contribua-admin',
 				plugins_url('/contribua/assets/js/admin.js', CONTRIBUA_PATH),
 				array('wp-color-picker'));
 		wp_enqueue_script('contribua-price',
 				plugins_url('/contribua/assets/js/price.js', CONTRIBUA_PATH));
-		wp_enqueue_script('script-app',
+		wp_enqueue_script('contribua-app',
 				plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 	}
 }
