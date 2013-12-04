@@ -1,10 +1,11 @@
 <?php
 	function mount_desc($type, $descricao)
 	{
-		return 'Contribuicao - '
-					. Contribua::getTypeName($type)
-					. ' - '
-					. remove_accents($descricao);
+		return __('Contribuição', 'contribua')
+			. ' - '
+			. Contribua::getTypeName($type)
+			. ' - '
+			. remove_accents($descricao);
 	}
 
 	if (Contribua::getOption('contribuicaofixa1') == 'true') {
@@ -22,7 +23,7 @@
 
 <section id="contribua-content">
 		<section class="contribua-widget clearfix">
-				<p><?php if(trim(Contribua::getOption('descricao')) == '') { echo Contribua::TEXTO_DESCRITIVO_PADRAO; } else { echo Contribua::getOption('descricao'); } ?></p>
+				<p><?php if(trim(Contribua::getOption('descricao')) == '') { _e(Contribua::TEXTO_DESCRITIVO_PADRAO, 'contribua'); } else { echo Contribua::getOption('descricao'); } ?></p>
 
 				<?php if(Contribua::getOption('contribuicaofixa1') == 'true') { ?>
 				<div class="contribua-contribution-wrapper" style="padding: 0;">

@@ -84,7 +84,7 @@ class Contribua
 	 */
 	public function template($url)
 	{
-		return CONTRIBUA_PATH.'/tpl_Contribua.php';
+		return CONTRIBUA_PATH.'/tpl_contribua.php';
 	}
 
 	/**
@@ -144,11 +144,11 @@ class Contribua
 	public static function getTypeName($type) {
 		switch ($type) {
 			case '1':
-				return 'Institucional';
+				return __('Institucional', 'contribua');
 			case '2':
-				return 'Projeto';
+				return __('Projeto', 'contribua');
 			default:
-				return 'Outro';
+				return __('Outro', 'contribua');
 		}
 	}
 
