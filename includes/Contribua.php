@@ -159,8 +159,6 @@ class Contribua
 
 	public static function addStylesheet()
 	{
-		wp_enqueue_style('contribua-css-widget',
-				plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
 		wp_enqueue_style('contribua-css-app',
 				plugins_url('/contribua/assets/css/app.css', CONTRIBUA_PATH));
 	}

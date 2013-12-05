@@ -18,6 +18,10 @@ define('CONTRIBUA_PATH', dirname(__FILE__));
 // Dependences //
 //////////////////
 
-require CONTRIBUA_PATH.'/includes/Contribua.php';
-require CONTRIBUA_PATH.'/widget.php';
-require CONTRIBUA_PATH.'/includes/functions.php';
+require CONTRIBUA_PATH.DIRECTORY_SEPARATOR.'includes'
+	.DIRECTORY_SEPARATOR.'Contribua.php';
+require CONTRIBUA_PATH.DIRECTORY_SEPARATOR.'widgets'
+	.DIRECTORY_SEPARATOR.'contribuawidget'
+	.DIRECTORY_SEPARATOR.'contribuawidget.php';
+require CONTRIBUA_PATH.DIRECTORY_SEPARATOR.'includes'
+	.DIRECTORY_SEPARATOR.'functions.php';

@@ -1,9 +1,9 @@
 <?php
 
-class ContribuaWidget extends WP_Widget 
+class ContribuaWidget extends WP_Widget
 {
 
-	public function __construct() 
+	public function __construct()
 	{
 		parent::__construct(
 			'contribua_widget',
@@ -14,7 +14,9 @@ class ContribuaWidget extends WP_Widget
 
 	public function widget($args, $instance)
 	{
-		wp_enqueue_style('contribua-css-widget', plugins_url('/contribua/assets/css/widget.css', CONTRIBUA_PATH));
+		wp_enqueue_style('contribua-css-widget', plugins_url(
+					'/contribua/widgets/contribuawidget/css/contribuawidget.css',
+					CONTRIBUA_PATH));
 		wp_enqueue_script('contribua-app', plugins_url('/contribua/assets/js/app.js', CONTRIBUA_PATH));
 		$id_carteira    = array_key_exists('id_carteira', $instance) ? $instance['id_carteira'] : '';
 		$pagina_retorno = array_key_exists('pagina_retorno', $instance) ? $instance['pagina_retorno'] : '';
@@ -22,10 +24,10 @@ class ContribuaWidget extends WP_Widget
 		$descricao      = array_key_exists('descricao', $instance) ? $instance['descricao'] : '';
 		$valor          = array_key_exists('valor', $instance) ? $instance['valor'] : '';
 
-		require CONTRIBUA_PATH.'/views/template-content-widget.php';	
+		require dirname(__FILE__).DIRECTORY_SEPARATOR.'view.php';
 	}
 
-	public function form($instance) 
+	public function form($instance)
 	{
 		$id_carteira    = array_key_exists('id_carteira', $instance) ? $instance['id_carteira'] : '';
 		$pagina_retorno = array_key_exists('pagina_retorno', $instance) ? $instance['pagina_retorno'] : '';
@@ -34,7 +36,7 @@ class ContribuaWidget extends WP_Widget
 		$valor          = array_key_exists('valor', $instance) ?
 			$instance['valor'] : 'R$ 0.00';
 
-		require CONTRIBUA_PATH.'/views/template-admin-widget.php';
+		require dirname(__FILE__).DIRECTORY_SEPARATOR.'form.php';
 	}
 
 	public function update($new_instance, $old_instance)
@@ -50,6 +52,6 @@ class ContribuaWidget extends WP_Widget
 	}
 }
 
-add_action('widgets_init', function(){ 
-	register_widget('ContribuaWidget'); 
+add_action('widgets_init', function(){
+	register_widget('ContribuaWidget');
 });
