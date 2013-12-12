@@ -93,6 +93,17 @@ class Contribua
 	 */
 	public static function createPageTemplate()
 	{
+		/* Injeta um item no cache de templates para garantir que o dropdown seja
+		 * mostrado. Ainda é necessário o javascript porque podemos apenas
+		 * sobreescrever as opções, não adicionar. */
+		if (!count(get_page_templates()))
+		{
+			$cacheKey = 'page_templates-'.md5(get_theme_root().'/'.get_stylesheet());
+			wp_cache_set($cacheKey,
+					array('contribua_force_dropdown' => 'contribua_force_dropdown'),
+					'themes', 1800);
+		}
+
 		wp_enqueue_script('contribua-edit',
 				plugins_url('/contribua/assets/js/edit.js', CONTRIBUA_PATH));
 		wp_localize_script('contribua-edit', 'templateData',
