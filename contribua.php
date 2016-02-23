@@ -25,3 +25,6 @@ require CONTRIBUA_PATH.DIRECTORY_SEPARATOR.'widgets'
 	.DIRECTORY_SEPARATOR.'contribuawidget.php';
 require CONTRIBUA_PATH.DIRECTORY_SEPARATOR.'includes'
 	.DIRECTORY_SEPARATOR.'functions.php';
+
+require CONTRIBUA_PATH.DIRECTORY_SEPARATOR.'includes'
+		.DIRECTORY_SEPARATOR.'PageTemplater.php';

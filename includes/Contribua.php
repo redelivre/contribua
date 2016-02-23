@@ -203,6 +203,6 @@ class Contribua
 	}
 }
 
-add_action('add_meta_boxes_page', array('Contribua', 'createPageTemplate'));
-add_action('save_post', array('Contribua', 'savePage'));
-add_filter('page_template', array('Contribua', 'single_template'));
+//add_action('add_meta_boxes_page', array('Contribua', 'createPageTemplate'));
+//add_action('save_post', array('Contribua', 'savePage'));
+//add_filter('page_template', array('Contribua', 'single_template'));
