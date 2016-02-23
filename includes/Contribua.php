@@ -87,60 +87,6 @@ class Contribua
 		return CONTRIBUA_PATH.'/tpl_contribua.php';
 	}
 
-	/**
-	 * [createPageTemplate description]
-	 * @return [type] [description]
-	 */
-	public static function createPageTemplate()
-	{
-		/* Injeta um item no cache de templates para garantir que o dropdown seja
-		 * mostrado. Ainda é necessário o javascript porque podemos apenas
-		 * sobreescrever as opções, não adicionar. */
-		if (!count(get_page_templates()))
-		{
-			$cacheKey = 'page_templates-'.md5(get_theme_root().'/'.get_stylesheet());
-			wp_cache_set($cacheKey,
-					array('contribua_force_dropdown' => 'contribua_force_dropdown'),
-					'themes', 1800);
-		}
-
-		wp_enqueue_script('contribua-edit',
-				plugins_url('/contribua/assets/js/edit.js', CONTRIBUA_PATH));
-		wp_localize_script('contribua-edit', 'templateData',
-				array('slug' => get_page_template_slug()));
-	}
-
-	public static function savePage($post_ID)
-	{
-		if(array_key_exists('page_template', $_POST)
-				&& $_POST['page_template'] == 'contribua')
-		{
-			update_post_meta($post_ID, '_wp_page_template', 'contribua');
-			$_POST['page_template'] = 'default';
-		}
-		else if(get_post_meta($post_ID, '_wp_page_template', true) === 'contribua')
-			update_post_meta($post_ID, '_wp_page_template', 'default');
-	}
-
-    /**
-     * [contribua_single_template description]
-     * @param  [type] $single_template [description]
-     * @return [type]                  [description]
-     */
-	function single_template($single_template)
-	{
-		global $post;
-		if ('contribua' == get_page_template_slug()) {
-
-			$post_slug = $post->post_name;
-
-			$templateTheme = get_stylesheet_directory().'/contribua.php';
-			return file_exists($templateTheme) ? $templateTheme : CONTRIBUA_PATH.'/tpl_contribua.php';
-		}
-
-		return $single_template;
-	}
-
 	public static function getColorByType($type) {
 		switch ($type) {
 			case '1':
@@ -203,6 +149,3 @@ class Contribua
 	}
 }
 
-//add_action('add_meta_boxes_page', array('Contribua', 'createPageTemplate'));
-//add_action('save_post', array('Contribua', 'savePage'));
-//add_filter('page_template', array('Contribua', 'single_template'));
