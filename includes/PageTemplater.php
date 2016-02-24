@@ -105,8 +105,14 @@ class PageTemplater
 		
 		return $template;
 	}
+	
+	public function isProjectTemplate()
+	{
+		global $post;
+		return is_object($post) && isset($post->ID) && isset ( $this->templates [get_post_meta ( $post->ID, '_wp_page_template', true )] );
+	}
 }
-
+global $PageTemplater;
 $PageTemplater = new PageTemplater();
 
 
