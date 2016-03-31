@@ -6,8 +6,8 @@
  */
 function contribua_add_stylesheets()
 {
-	global $post;
-	if (isset($post) && 'contribua' == get_page_template_slug())
+	global $PageTemplater;
+	if ($PageTemplater->isProjectTemplate())
 		Contribua::addStylesheet();
 }
 
@@ -19,8 +19,8 @@ add_action('wp_enqueue_scripts', 'contribua_add_stylesheets');
  */
 function contribua_add_javascripts()
 {
-	global $post;
-	if (isset($post) && 'contribua' == get_page_template_slug())
+	global $PageTemplater;
+	if ($PageTemplater->isProjectTemplate())
 		Contribua::addJavascript();
 }
 
