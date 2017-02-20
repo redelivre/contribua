@@ -89,9 +89,9 @@ class PageTemplater
 	public function view_project_template($template) {
 		global $post;
 
-		if($post == NULL)
+		if($post == NULL){
 		  return $template;
-
+                }
 		if (! isset ( $this->templates [get_post_meta ( $post->ID, '_wp_page_template', true )] )) {
 			return $template;
 		}
